@@ -25,13 +25,10 @@ var bio = {
 				formattedRole = HTMLheaderRole.replace("%data%",this.role);
 				formatted = formatted + formattedRole;
 				$("#header").prepend(formatted);
-//				formatted = HTMLcontactGeneric.replace("%data%"," ");
-//				$("#header").append(formatted);
 				formatted = HTMLmobile.replace("%data%",this.contacts.mobile);
 				$("#topContacts").append(formatted);
 				formatted = HTMLemail.replace("%data%",this.contacts.email);
 				$("#topContacts").append(formatted);
-//				formatted = HTMLheaderTwitter.replace("%data%",this.twitter);
 				formatted = HTMLgithub.replace("%data%",this.contacts.github);
 				$("#topContacts").append(formatted);
 				formatted = HTMLlinkedin.replace("%data%",this.contacts.linkedin);
@@ -264,7 +261,6 @@ var education = {"schools":
 								formattedSchool = HTMLonlineSchool.replace("%data%",onlineSchool.school);
 								formattedDates = HTMLonlineDates.replace("%data%",onlineSchool.dates);
 								formattedOnline = formattedTitle + formattedSchool + formattedDates;
-
 								$(".education-entry:last").append(formattedOnline);
 							}
 							
