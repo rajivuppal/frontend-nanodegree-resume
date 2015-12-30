@@ -2,22 +2,21 @@
 var bio = {
 			"name": "Rajiv Uppal",
 			"role": "Software Engineering Executive",
-			"welcomeMessage": "Welcome to my Resume",
 			"contacts":
 				{
 					"mobile": "+1 203 258 3689",
 					"email": "rajiv.uppal@yahoo.com",
 					"github": "rajivuppal",
-					"linkedin": "www.linkedin.com/in/rajivuppal",
-					"twitter": "xxxx",
+					"twitter": "@RajivU",
 					"location": "Trumbull, CT",
-					"bioPic": "images/Rajiv-pic.jpg"
 				},
+			"welcomeMessage": "Hands-on Technology Executive with expertise in enterprise software.   Track record of fostering highly effective teams, leading development from concept to launch of web applications, targeting retail optimization as well as e-commerce.",
 			"skills": ["Product Development Leadership","Hands-on Technologist","Product Lifecycle Management","Agile Development",
 						"Application Architecture","Emerging Technologies","Technology Direction and Roadmap",
 						"Team Development","Offshore and Near-shore Expertise","Cloud-Based SaaS Platforms",
 						"Startup and High-Growth Organizations"
 					],
+			"bioPic": "images/Rajiv-pic.jpg",
 			display: function() {
 				var formatted;
 				var formattedRole;
@@ -27,15 +26,22 @@ var bio = {
 				$("#header").prepend(formatted);
 				formatted = HTMLmobile.replace("%data%",this.contacts.mobile);
 				$("#topContacts").append(formatted);
+				$("#footerContacts").append(formatted);	
 				formatted = HTMLemail.replace("%data%",this.contacts.email);
 				$("#topContacts").append(formatted);
+				$("#footerContacts").append(formatted);	
 				formatted = HTMLgithub.replace("%data%",this.contacts.github);
 				$("#topContacts").append(formatted);
-				formatted = HTMLlinkedin.replace("%data%",this.contacts.linkedin);
+				$("#footerContacts").append(formatted);	
+				formatted = HTMLtwitter.replace("%data%",this.contacts.twitter);
 				$("#topContacts").append(formatted);
+				$("#footerContacts").append(formatted);	
 				formatted = HTMLlocation.replace("%data%",this.contacts.location);
 				$("#topContacts").append(formatted);
-				formatted = HTMLbioPic.replace("%data%",this.contacts.bioPic);
+				$("#footerContacts").append(formatted);				
+				formatted = HTMLbioPic.replace("%data%",this.bioPic);
+				$("#header").append(formatted);
+				formatted = HTMLwelcomeMsg.replace("%data%",this.welcomeMessage);
 				$("#header").append(formatted);
 				if(this.skills.length > 0) {
 					$("#header").append(HTMLskillsStart);
@@ -48,66 +54,64 @@ var bio = {
 
 
 			}		
-		}
+		};
 
 var work = {"jobs": [ 	{
-						"title": "Self",
 						"employer": "Technology Consultant",
+						"title": "Self",
+						"location": "Trumbull, CT",
 						"dates": "3 months",
-						"city": "Trumbull, CT",
-						"url": "www.google.com",
 						"description": ["Management and technology consulting services to software companies and VC firms."]
 						},
 						{ 
-						"title": "Senior Director, Product Development",
 						"employer": "Revionics & Retail Optimization Inc.",
+						"title": "Senior Director, Product Development",
+						"location": "Austin, TX",
 						"dates": "2008-2015",
-						"city": "Austin, TX",
-						"url": "http://www.revionics.com",
-						"description": ["Oversaw product leadership and development from prototype to production, using Microsoft technologies on a SaaS platform ", 
-						"Built product development/services teams from ground up and crafted project delivery processes.", 
-						"Exponentially increased productivity of software platforms, laying groundwork for major contracts with top-5 retailer to deploy flagship software in 500 grocery stores.  Delivered solutions which led to sales increases above $10 million each year.",
-						"Practiced Agile development methodology, facilitated Scrum meetings, Sprint planning, Sprint review and retrospectives.",
-						"Oversaw Product Quality Assurance, creation of test plans, sand box environments and test applications for functional testing.",
-						"Raised $3.2 million in venture capital funding from senior management, government entities and private investors.  "
+						"description": 
+							[
+							"Oversaw product leadership and development from prototype to production, using Microsoft technologies on a SaaS platform ", 
+							"Built product development/services teams from ground up and crafted project delivery processes.", 
+							"Exponentially increased productivity of software platforms, laying groundwork for major contracts with top-5 retailer to deploy flagship software in 500 grocery stores.  Delivered solutions which led to sales increases above $10 million each year.",
+							"Practiced Agile development methodology, facilitated Scrum meetings, Sprint planning, Sprint review and retrospectives.",
+							"Oversaw Product Quality Assurance, creation of test plans, sand box environments and test applications for functional testing.",
+							"Raised $3.2 million in venture capital funding from senior management, government entities and private investors.  "
 							]
 						},
 						{ 
-						"title": "Director, Product Development",
 						"employer": "IBM & NeuVis",
+						"title": "Director, Product Development",
+						"location": "Southbury, CT",
 						"dates": "1996-2005",
-						"city": "Southbury, CT",
-						"url": "http://www.ibm.com",
-						"description": ["Managed product development for software platform that enabled users to model sophisticated web applications using visual tools.  The generated application was deployable across multiple platforms including Microsoft, Oracle and IBM.", 
-						"Developed industry specific application frameworks for financial services, energy utilities, travel and e-commerce.", 
-						"Spearheaded prototype development, testing and training initiatives on stringent budget while supervising team of 60+ staff.",
-						"Oversaw key aspects of company launch and operations, expanding to more than 300 employees and acquisition by IBM.",
-						"Recruited senior management team and presented corporate business plan to venture capitalists, successfully raising more than $60 million in financing.",
-						"Worked directly with IBM sales teams post-acquisition to differentiate software features and benefits from IBM portfolio."
+						"description": 
+							[
+							"Managed product development for software platform that enabled users to model sophisticated web applications using visual tools.  The generated application was deployable across multiple platforms including Microsoft, Oracle and IBM.", 
+							"Developed industry specific application frameworks for financial services, energy utilities, travel and e-commerce.", 
+							"Spearheaded prototype development, testing and training initiatives on stringent budget while supervising team of 60+ staff.",
+							"Oversaw key aspects of company launch and operations, expanding to more than 300 employees and acquisition by IBM.",
+							"Recruited senior management team and presented corporate business plan to venture capitalists, successfully raising more than $60 million in financing.",
+							"Worked directly with IBM sales teams post-acquisition to differentiate software features and benefits from IBM portfolio."
 							]
 						},
 						{ 
-						"title": "Self",
 						"employer": "Independent Consultant",
+						"title": "Self",
+						"location": "Trumbull, CT",
 						"dates": "2006-2008",
-						"city": "Trumbull, CT",
-						"url": "www.google.com",
 						"description": ["Management and technology consulting services to software companies and VC firms."]
 						},
 						{ 
 						"title": "Senior Software Engineer",
 						"employer": "Bolt Beranek and Newman",
 						"dates": "1992-1994",
-						"city": "Cambridge, MA",
-						"url": "www.raytheon.com",
+						"location": "Cambridge, MA",
 						"description": ["As a Senior Software Developer, steered successive releases of RS / 1 statistical analysis software, with team of 10 engineers."]
 						},
 						{ 
-						"title": "Software Engineer",
 						"employer": "Data Acquisition Systems",
+						"title": "Software Engineer",
+						"location": "Boston, MA",
 						"dates": "1987-1992",
-						"city": "Boston, MA",
-						"url": "www.raytheon.com",
 						"description": ["Core member of the development team that was responsible for the development of the process control automation software."]
 						}
 					],
@@ -119,6 +123,7 @@ var work = {"jobs": [ 	{
 							var formattedTitle = "";
 							var formattedEmpTitle = "";
 							var formattedDates = "";
+							var formattedLocation = "";
 							var formattedDescItem = "";
 							var formattedDescItems = "";
 							$("#workExperience").append(HTMLworkStart);
@@ -128,11 +133,12 @@ var work = {"jobs": [ 	{
 								formattedEmpTitle = formattedEmp + formattedTitle;
 							}
 							else {
-								formattedEmp = formattedEmp.replace("#",work.jobs[aJob].url);
+								formattedEmp = formattedEmp.replace("#","#WorkExperience");
 								formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[aJob].title);
 								formattedEmpTitle = formattedEmp + formattedTitle;
 							}
 							formattedDates = HTMLworkDates.replace("%data%",work.jobs[aJob].dates);
+							formattedLocation = HTMLworkLocation.replace("%data%",work.jobs[aJob].location);
 							for(var j=0; j<work.jobs[aJob].description.length; j++) {
 								formattedDescItem = HTMLworkDescItem.replace("%data%",work.jobs[aJob].description[j]);
 								formattedDescItems = formattedDescItems + formattedDescItem;
@@ -140,10 +146,11 @@ var work = {"jobs": [ 	{
 							formattedDesc = HTMLworkDescription.replace("%data%",formattedDescItems);
 							$(".work-entry:last").append(formattedEmpTitle);
 							$(".work-entry:last").append(formattedDates);
+							$(".work-entry:last").append(formattedLocation);
 							$(".work-entry:last").append(formattedDesc);
 						}
 					}
-				}
+				};
 
 var projects = {"projects": 
 					[ 	{
@@ -184,7 +191,7 @@ var projects = {"projects":
 						}
 					}
 
-				}
+				};
 
 var education = {"schools": 
 						[ 
@@ -194,7 +201,7 @@ var education = {"schools":
 								"degree": "Masters",
 								"majors": "Computer Science",
 								"dates": "1984-1986",
-								"url": "www.lsu.edu"
+								"url": "http://www.lsu.edu"
 							},
 							{ 
 								"name": "Indian Institute of Technology, BHU",
@@ -202,26 +209,39 @@ var education = {"schools":
 								"degree": "Bachelor of Engineering",
 								"majors": "Chemical Engineering",
 								"dates": "1977-1982",
-								"url": "www.iitbhu.ac.in"
+								"url": "http://www.iitbhu.ac.in"
 							}
 						],
 						"onlineCourses": 
 						[ 
 							{
-								"title": "Javascript basics",
+								"title": "Intro to HTML and CSS",
 								"school": "Udacity",
-								"dates": 2015,
-								"url": "www.udacity.com"
+								"date": "December 2015",
+								"url": "https://www.udacity.com/course/intro-to-html-and-css--ud304"
 							},
 							{
-								"title": "Version Control",
+								"title": "Javascript basics",
 								"school": "Udacity",
-								"dates": 2015,
-								"url": "www.udacity.com"
+								"date": "December 2015",
+								"url": "https://www.udacity.com/course/javascript-basics--ud804"
+							},
+							{
+								"title": "Intro to jQuery",
+								"school": "Udacity",
+								"date": "December 2015",
+								"url": "https://www.udacity.com/course/intro-to-jquery--ud245"
+							},
+							{
+								"title": "How to Use Git and GitHub",
+								"school": "Udacity",
+								"date": "December 2015",
+								"url": "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
 							}
 						],
 						display: function() {
 							var aSchool;
+              				var formattedDates = "";
 
 							for (var i=0; i<this.schools.length; i++) {
 								aSchool = this.schools[i];
@@ -230,7 +250,6 @@ var education = {"schools":
 								var formattedDegree = "";
 								var formattedNameDeg = "";
 								var formattedMajors = "";
-								var formattedDates = "";
 
 								$("#education").append(HTMLschoolStart);
 								formattedName = HTMLschoolName.replace("%data%",aSchool.name);
@@ -241,40 +260,28 @@ var education = {"schools":
 								formattedLocation = HTMLschoolLocation.replace("%data%",aSchool.location);
 								formattedMajors = HTMLschoolMajor.replace("%data%",aSchool.majors);
 
-
 								$(".education-entry:last").append(formattedNameDeg);
 								$(".education-entry:last").append(formattedDates);
 								$(".education-entry:last").append(formattedLocation);							
 								$(".education-entry:last").append(formattedMajors);							
 							}
 
-
 							var formattedTitle = "";
 							var formattedSchool = "";	
 							var formattedOnline = "";	
-							var formattedURL = "";					
 							$(".education-entry:last").append(HTMLonlineClasses);
 							for(i=0;i<this.onlineCourses.length; i++) {
 								var onlineSchool = this.onlineCourses[i];
 								formattedTitle = HTMLonlineTitle.replace("%data%",onlineSchool.title);
 								formattedTitle = formattedTitle.replace("#",onlineSchool.url);	
 								formattedSchool = HTMLonlineSchool.replace("%data%",onlineSchool.school);
-								formattedDates = HTMLonlineDates.replace("%data%",onlineSchool.dates);
+								formattedDates = HTMLonlineDates.replace("%data%",onlineSchool.date);
 								formattedOnline = formattedTitle + formattedSchool + formattedDates;
 								$(".education-entry:last").append(formattedOnline);
 							}
 							
-						}
-
-										
-					}
-
-
-
-bio.display();
-work.display();
-projects.display();
-education.display();
+						}									
+					};
 
 function inName(nameStr) {
 	var nameArray = [];
@@ -286,11 +293,14 @@ function inName(nameStr) {
 	return (fName + " " + lName);
 }
 
+bio.display();
+work.display();
+projects.display();
+education.display();
+
 $("#main").append(internationalizeButton);
 
 $("#mapDiv").append(googleMap);
-
-
 
 $(document).click(function(loc) {
   logClicks(loc.pageX,loc.pageY);
