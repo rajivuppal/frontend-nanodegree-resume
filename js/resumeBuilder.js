@@ -61,58 +61,42 @@ var work = {"jobs": [ 	{
 						"title": "Self",
 						"location": "Trumbull, CT",
 						"dates": "3 months",
-						"description": ["Management and technology consulting services to software companies and VC firms."]
+						"description": "Management and technology consulting services to software companies and VC firms."
 						},
 						{ 
 						"employer": "Revionics & Retail Optimization Inc.",
 						"title": "Senior Director, Product Development",
 						"location": "Austin, TX",
 						"dates": "2008-2015",
-						"description": 
-							[
-							"Oversaw product leadership and development from prototype to production, using Microsoft technologies on a SaaS platform ", 
-							"Built product development/services teams from ground up and crafted project delivery processes.", 
-							"Exponentially increased productivity of software platforms, laying groundwork for major contracts with top-5 retailer to deploy flagship software in 500 grocery stores.  Delivered solutions which led to sales increases above $10 million each year.",
-							"Practiced Agile development methodology, facilitated Scrum meetings, Sprint planning, Sprint review and retrospectives.",
-							"Oversaw Product Quality Assurance, creation of test plans, sand box environments and test applications for functional testing.",
-							"Raised $3.2 million in venture capital funding from senior management, government entities and private investors.  "
-							]
+						"description": "Oversaw product leadership and development from prototype to production, using Microsoft technologies on a SaaS platform**Built product development/services teams from ground up and crafted project delivery processes.**Exponentially increased productivity of software platforms, laying groundwork for major contracts with top-5 retailer to deploy flagship software in 500 grocery stores.  Delivered solutions which led to sales increases above $10 million each year.**Practiced Agile development methodology, facilitated Scrum meetings, Sprint planning, Sprint review and retrospectives.**Oversaw Product Quality Assurance, creation of test plans, sand box environments and test applications for functional testing.**Raised $3.2 million in venture capital funding from senior management, government entities and private investors."
 						},
 						{ 
 						"employer": "IBM & NeuVis",
 						"title": "Director, Product Development",
 						"location": "Southbury, CT",
 						"dates": "1996-2005",
-						"description": 
-							[
-							"Managed product development for software platform that enabled users to model sophisticated web applications using visual tools.  The generated application was deployable across multiple platforms including Microsoft, Oracle and IBM.", 
-							"Developed industry specific application frameworks for financial services, energy utilities, travel and e-commerce.", 
-							"Spearheaded prototype development, testing and training initiatives on stringent budget while supervising team of 60+ staff.",
-							"Oversaw key aspects of company launch and operations, expanding to more than 300 employees and acquisition by IBM.",
-							"Recruited senior management team and presented corporate business plan to venture capitalists, successfully raising more than $60 million in financing.",
-							"Worked directly with IBM sales teams post-acquisition to differentiate software features and benefits from IBM portfolio."
-							]
+						"description": "Managed product development for software platform that enabled users to model sophisticated web applications using visual tools.  The generated application was deployable across multiple platforms including Microsoft, Oracle and IBM.**Developed industry specific application frameworks for financial services, energy utilities, travel and e-commerce.**Spearheaded prototype development, testing and training initiatives on stringent budget while supervising team of 60+ staff.**Oversaw key aspects of company launch and operations, expanding to more than 300 employees and acquisition by IBM.**Recruited senior management team and presented corporate business plan to venture capitalists, successfully raising more than $60 million in financing.**Worked directly with IBM sales teams post-acquisition to differentiate software features and benefits from IBM portfolio."
 						},
 						{ 
 						"employer": "Independent Consultant",
 						"title": "Self",
 						"location": "Trumbull, CT",
 						"dates": "2006-2008",
-						"description": ["Management and technology consulting services to software companies and VC firms."]
+						"description": "Management and technology consulting services to software companies and VC firms."
 						},
 						{ 
 						"title": "Senior Software Engineer",
 						"employer": "Bolt Beranek and Newman",
 						"dates": "1992-1994",
 						"location": "Cambridge, MA",
-						"description": ["As a Senior Software Developer, steered successive releases of RS / 1 statistical analysis software, with team of 10 engineers."]
+						"description": "As a Senior Software Developer, steered successive releases of RS / 1 statistical analysis software, with team of 10 engineers."
 						},
 						{ 
 						"employer": "Data Acquisition Systems",
 						"title": "Software Engineer",
 						"location": "Boston, MA",
 						"dates": "1987-1992",
-						"description": ["Core member of the development team that was responsible for the development of the process control automation software."]
+						"description": "Core member of the development team that was responsible for the development of the process control automation software."
 						}
 					],
 					display: function() {
@@ -126,6 +110,7 @@ var work = {"jobs": [ 	{
 							var formattedLocation = "";
 							var formattedDescItem = "";
 							var formattedDescItems = "";
+							var descriptionItemArray = [];
 							$("#workExperience").append(HTMLworkStart);
 							formattedEmp = HTMLworkEmployer.replace("%data%",work.jobs[aJob].employer);
 							if(work.jobs[aJob].title == "Self") {
@@ -139,8 +124,10 @@ var work = {"jobs": [ 	{
 							}
 							formattedDates = HTMLworkDates.replace("%data%",work.jobs[aJob].dates);
 							formattedLocation = HTMLworkLocation.replace("%data%",work.jobs[aJob].location);
-							for(var j=0; j<work.jobs[aJob].description.length; j++) {
-								formattedDescItem = HTMLworkDescItem.replace("%data%",work.jobs[aJob].description[j]);
+							//parse the description to separate the items for the bullet list
+							descriptionItemArray = work.jobs[aJob].description.split("**");
+							for(var j=0; j<descriptionItemArray.length; j++) {
+								formattedDescItem = HTMLworkDescItem.replace("%data%",descriptionItemArray[j]);
 								formattedDescItems = formattedDescItems + formattedDescItem;
 							}
 							formattedDesc = HTMLworkDescription.replace("%data%",formattedDescItems);
